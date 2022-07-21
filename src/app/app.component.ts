@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'gladiatrix-club';
+  girls = [ {name:'Ashley', description: 'Brunette', type: 'defender'} ];
+
+
+  onAttackerAdded(girlData: {name: string, description: string }) {
+    this.girls.push({
+      type: 'attacker',
+      name: girlData.name,
+      description: girlData.description
+    });
+  }
+
+  onDefenderAdded(girlData: {name: string, description: string }) {
+    this.girls.push({
+      type: 'defender',
+      name: girlData.name,
+      description: girlData.description
+    });
+  }
 }
